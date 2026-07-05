@@ -39,6 +39,22 @@ sensor:
     smart_meter_reading:
       name: "${b2500_name} Smart Meter Reading"
 
+switch:
+  - platform: b2500
+    b2500_id: ${b2500_id}
+    generation: 2
+    adaptive_mode:
+      name: "${b2500_name} Adaptive Mode"
+    surplus_feed_in:
+      name: "${b2500_name} Surplus Feed-in"
+
+select:
+  - platform: b2500
+    b2500_id: ${b2500_id}
+    generation: 2
+    charge_mode:
+      name: "${b2500_name} Charge Mode"
+
 button:
   - platform: b2500
     b2500_id: ${b2500_id}

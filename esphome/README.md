@@ -18,8 +18,15 @@ The WiFi package is intentionally referenced as `common/wifinordkorea.yaml` and
 not stored here with a real password.
 
 After flashing, use Home Assistant to check the `Last Response`, output power,
-WiFi/MQTT status, and reboot buttons. Use the reboot buttons as recovery only;
-normal power control should stay with AstraMeter/CT002.
+WiFi/MQTT status, adaptive mode, smart meter connection/reading, and reboot
+buttons. Use the reboot buttons as recovery only; normal power control should
+stay with AstraMeter/CT002.
+
+The current upstream component exposes B2500-side smart meter state as
+`Smart Meter Connected`, `Smart Meter Reading`, and `Adaptive Mode`. It does
+not expose the CT device MAC/ID assignment directly, so verify the assignment
+by checking that the B2500 smart meter reading matches the AstraMeter/fake
+Shelly value.
 
 Initial flashing still needs USB or ESPHome Web Installer. After the first
 flash, the shared `common/base.yaml` enables ESPHome OTA and the port-80 web UI,
