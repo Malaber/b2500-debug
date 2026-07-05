@@ -24,6 +24,17 @@ http://SERVER_IP:18080/
 docker compose up -d --build
 ```
 
+## Published image
+
+The GitHub Actions workflow publishes an amd64 image to:
+
+```text
+ghcr.io/malaber/b2500-debug:latest
+```
+
+Use `deploy/docker-compose.yml` and `deploy/config.ini` as the drop-in test
+stack next to AstraMeter.
+
 ## API
 
 ```bash
