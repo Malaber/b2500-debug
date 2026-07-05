@@ -1,0 +1,62 @@
+ble_client:
+  - mac_address: "${b2500_mac}"
+    id: ${b2500_ble_client_id}
+
+b2500:
+  - id: ${b2500_id}
+    ble_client_id: ${b2500_ble_client_id}
+    generation: 2
+    time_id: sntp_time
+    update_interval: ${b2500_update_interval}
+
+binary_sensor:
+  - platform: b2500
+    b2500_id: ${b2500_id}
+    generation: 2
+    wifi_connected:
+      name: "${b2500_name} WiFi Connected"
+    mqtt_connected:
+      name: "${b2500_name} MQTT Connected"
+    smart_meter_connected:
+      name: "${b2500_name} Smart Meter Connected"
+
+sensor:
+  - platform: b2500
+    b2500_id: ${b2500_id}
+    generation: 2
+    soc:
+      name: "${b2500_name} SOC"
+    in_total_power:
+      name: "${b2500_name} Input Power"
+    out_total_power:
+      name: "${b2500_name} Output Power"
+    capacity:
+      name: "${b2500_name} Remaining Capacity"
+    wifi_rssi:
+      name: "${b2500_name} WiFi RSSI"
+    adaptive_power_out:
+      name: "${b2500_name} Adaptive Output Power"
+    smart_meter_reading:
+      name: "${b2500_name} Smart Meter Reading"
+
+button:
+  - platform: b2500
+    b2500_id: ${b2500_id}
+    generation: 2
+    reboot:
+      name: "${b2500_name} Reboot"
+
+text_sensor:
+  - platform: b2500
+    b2500_id: ${b2500_id}
+    generation: 2
+    firmware_version:
+      name: "${b2500_name} Firmware Version"
+    device_id:
+      name: "${b2500_name} Device ID"
+    mac_address:
+      name: "${b2500_name} BLE MAC"
+    wifi_ssid:
+      name: "${b2500_name} WiFi SSID"
+    last_response:
+      name: "${b2500_name} Last Response"

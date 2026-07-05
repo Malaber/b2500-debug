@@ -1,0 +1,11 @@
+external_components:
+  - source: github://tomquist/esphome-b2500
+    components: [b2500]
+
+esp32_ble_tracker:
+  scan_parameters:
+    active: true
+
+time:
+  - platform: sntp
+    id: sntp_time

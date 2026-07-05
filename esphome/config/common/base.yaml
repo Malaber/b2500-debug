@@ -1,0 +1,15 @@
+captive_portal:
+
+logger:
+
+api:
+
+ota:
+  - platform: esphome
+
+web_server:
+  port: 80
+
+esphome:
+  name: ${devicename}
+  friendly_name: ${friendly_name}
