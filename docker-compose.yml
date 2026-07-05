@@ -1,0 +1,9 @@
+---
+services:
+  fake-shelly-3em:
+    build: .
+    container_name: fake-shelly-3em
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - "./data:/data"
