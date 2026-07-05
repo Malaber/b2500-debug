@@ -62,6 +62,31 @@ button:
     reboot:
       name: "${b2500_name} Reboot"
 
+  - platform: template
+    name: "${b2500_name} Enable CT Follow"
+    entity_category: config
+    icon: "mdi:transmission-tower-import"
+    on_press:
+      - logger.log: "Enabling B2500 adaptive CT-follow mode"
+      - b2500.set_adaptive_mode_enabled:
+          id: ${b2500_id}
+          generation: 2
+          enabled: true
+
+  - platform: template
+    name: "${b2500_name} Force CT Follow Reboot"
+    entity_category: config
+    icon: "mdi:restart-alert"
+    on_press:
+      - logger.log: "Enabling B2500 adaptive CT-follow mode and rebooting"
+      - b2500.set_adaptive_mode_enabled:
+          id: ${b2500_id}
+          generation: 2
+          enabled: true
+      - delay: 3s
+      - b2500.reboot:
+          id: ${b2500_id}
+
 text_sensor:
   - platform: b2500
     b2500_id: ${b2500_id}
